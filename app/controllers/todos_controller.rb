@@ -43,7 +43,7 @@ def complete
          flash[:notice] = "completed!"
          redirect_to todos_path
     else
-        render 'index'
+        redirect_to todos_path
     end
 end
 def list
