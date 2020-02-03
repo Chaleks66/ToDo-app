@@ -9,6 +9,7 @@
           <%= link_to "edit ToDo", edit_todo_path(todo), class: "btn btn-warning" %>
           <%= link_to "show ToDo", todo_path(todo), class: "btn btn-warning" %>
           <%= link_to "delete ToDo", todo_path(todo), class: "btn btn-warning", method: :delete, data:{ confirm: "are you seguro?"} %>
+          <%= link_to "complete ToDo", todos_complete_path(todo), class: "btn btn-warning", data: { confirm: "Have you completado tu Homework?"} %>
         </div>
       </div>
     </div>

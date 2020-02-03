@@ -35,6 +35,17 @@ end
         render 'edit'
     end
 end
+def complete
+    @todo = Todo.find(params[:id])
+    if @todo.completed == false
+         @todo.completed = true
+         @todo.save
+         flash[:notice] = "completed!"
+         redirect_to todos_path
+    else
+        render 'index'
+    end
+end
 
 
 
