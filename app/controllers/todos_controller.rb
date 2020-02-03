@@ -13,10 +13,33 @@ def create
     else
      render 'new'
     end
+end    
+def show
+    @todo = Todo.find(params[:id])
 end
+ def edit
+      @todo = Todo.find(params[:id])
+end
+
+ def update
+    @todo = Todo.find(params[:id])
+    if @todo.update (todo_params)
+        flash[:notice] = "Your new tarea was updated succesful"
+        redirect_to root_path(@todo)
+    else
+        render 'edit'
+    end
+end
+def destroy
+    @todo = Todo.find(params[:id])
+    
+end
+
 
 private
   def todo_params
     params.require(:todo).permit(:description, :completed)
-end
+  end
+
+
 end
