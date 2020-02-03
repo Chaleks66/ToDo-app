@@ -5,5 +5,18 @@ end
 def new
  @todo = Todo.new
 end
+def create
+    @todo = Todo.new(todo_params)
+    if @todo.save
+          flash[:notice] = "Your new tarea was added succesful"
+          redirect_to root_path
+    else
+     render 'new'
+    end
+end
 
+private
+  def todo_params
+    params.require(:todo).permit(:description, :completed)
+end
 end
