@@ -46,7 +46,10 @@ def complete
         render 'index'
     end
 end
-
+def list
+    @todo_completed = Todo.where(completed: true)
+    @todo_incompleted = Todo.where(completed: false)
+end
 
 
 private

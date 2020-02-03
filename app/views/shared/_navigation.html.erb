@@ -1,16 +1,18 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">ToDos App</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<div class="container">
+  <%= link_to "ToDo App", root_path, class:"navbar-brand", id:"logo" %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
+    <ul class="navbar-nav ml-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home</a>
+        <%=  link_to "List", list_todos_path, class: "nav-link"%>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
+      <li class="nav-item active">
+        <%=  link_to "New toDo", new_todo_path, class: "nav-link"%>
       </li>
     </ul>
   </div>
-</nav>
+  </div>
+  </nav>
