@@ -8,6 +8,7 @@
           <p class="card-text">This is aead-in to additional content. This content is a little bit longer.</p><%= todo.completed %>
           <%= link_to "edit ToDo", edit_todo_path(todo), class: "btn btn-warning" %>
           <%= link_to "show ToDo", todo_path(todo), class: "btn btn-warning" %>
+          <%= link_to "delete ToDo", todo_path(todo), class: "btn btn-warning", method: :delete, data:{ confirm: "are you seguro?"} %>
         </div>
       </div>
     </div>
